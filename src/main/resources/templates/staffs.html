@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ok</title>
+</head>
+<body>
+    <h1> Jo Staffs !</h1>
+<select name="staffs">
+    <option th:each="staff: ${staffs}"
+            th:value="${staff.id} "
+           th:text="${staff.firstName} +' '+ ${staff.lastName}"></option>
+</select>
+<button type="button"></button>
+</body>
+</html>
