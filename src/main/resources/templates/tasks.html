@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text=" 'All tasks of ' +${staff.firstName} +' '+ ${staff.lastName}"></h1>
+
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Finished at </th>
+            <th>Hours worked</th>
+        </tr>
+        <tr th:each="task: ${tasks}">
+            <td th:text="${task.description}"></td>
+            <td th:text="${task.date}"></td>
+            <td th:text="${task.hoursWorked}"></td>
+        </tr>
+    </table>
+</body>
+</html>

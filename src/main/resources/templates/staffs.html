@@ -6,11 +6,18 @@
 </head>
 <body>
     <h1> Jo Staffs !</h1>
-<select name="staffs">
-    <option th:each="staff: ${staffs}"
-            th:value="${staff.id} "
-           th:text="${staff.firstName} +' '+ ${staff.lastName}"></option>
-</select>
-<button type="button"></button>
+    <form
+            method="get"
+            th:action="@{/tasks}">
+
+        <select name="id">
+            <option th:each="staff: ${staffs}"
+                    th:value="${staff.id} "
+                   th:text="${staff.firstName} +' '+ ${staff.lastName}"></option>
+        </select>
+        <input type="submit" value="Tasks"></input>
+
+    </form>
+
 </body>
 </html>
